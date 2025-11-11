@@ -57,6 +57,7 @@ def view_records(records: List[Record]) -> None:
         return
     for i, r in enumerate(records, 1):
         print(f'{i}. 金额：{r["amount"]:+.2f}  备注：{r["note"]}')
+        print(f"共 {len(records)} 条记录")
 
 
 def statistics(records: List[Record]) -> None:
@@ -94,9 +95,11 @@ def main() -> None:
             break
         else:
             print('⚠️  请输入 1-4 之间的数字！')
+            input("\n按 Enter 返回主菜单...")
 
 
 if __name__ == '__main__':
     main()
     #让脚本既可以作为独立程序直接运行（执行 main() 启动功能），
     # 又可以作为模块被其他文件导入（此时不自动执行主程序，只提供函数 / 类供复用）
+
